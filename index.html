@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paris 6 Bistrô | Restaurante Francês em Foz do Iguaçu</title>
+<meta name="description" content="Paris 6 Bistrô, restaurante francês moderno no Shopping Catuaí Palladium, Foz do Iguaçu - PR. Reservas pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* FOTOS: coloque na MESMA pasta do index.html (em .jpg, .jpeg, .png ou .webp):
+   foto-topo (fundo do topo), foto-casa (seção "O bistrô"), foto-1, foto-2, foto-3, foto-4, foto-5, foto-6 (galeria).
+   O site usa sozinho as que existirem. Sem foto, a área some ou fica com o desenho. */
+:root{--vinho:#3f1120;--vinho2:#5f1d33;--creme:#f7f0e4;--papel:#efe4d2;--ouro:#c2994f;--ouro2:#dcb877;--tinta:#241a1c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--creme);color:var(--tinta);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.1}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--ouro2);outline-offset:3px}
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(63,17,32,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(194,153,79,.35)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-family:'Playfair Display',serif;font-size:24px;color:var(--creme);text-decoration:none;font-style:italic}
+.logo b{font-style:normal;color:var(--ouro2);border:1.5px solid var(--ouro2);border-radius:50%;padding:0 9px;margin-right:8px;font-size:21px}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:#eadfce;text-decoration:none;font-size:15px;letter-spacing:.03em}
+nav a:hover{color:var(--ouro2)}
+.menu-btn{display:none;background:none;border:1px solid var(--ouro);color:var(--creme);padding:8px 14px;border-radius:6px;font:inherit;cursor:pointer}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:var(--creme);overflow:hidden;background:
+ radial-gradient(800px 480px at 90% 10%,rgba(194,153,79,.35),transparent 60%),
+ repeating-linear-gradient(45deg,rgba(255,255,255,.028) 0 2px,transparent 2px 26px),
+ linear-gradient(155deg,#2a0b16 0%,#4a1527 60%,#6b2438 120%)}
+.hero::before{content:"";position:absolute;inset:0;background:var(--hero-img,none) center/cover no-repeat;opacity:.6}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,8,16,.9) 0%,rgba(30,8,16,.4) 70%,rgba(30,8,16,.2) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:90px}
+.selo{display:inline-flex;gap:12px;align-items:center;border:1px solid rgba(220,184,119,.6);padding:10px 18px;border-radius:999px;font-size:15px;margin-bottom:28px;background:rgba(30,8,16,.5)}
+.stars{color:var(--ouro2);letter-spacing:2px}
+.hero h1{font-size:clamp(50px,9vw,112px);letter-spacing:-.01em}
+.hero h1 em{display:block;font-size:.42em;font-style:italic;color:var(--ouro2);margin-top:14px;font-weight:500}
+.hero p.lead{max-width:48ch;margin:24px 0 34px;font-size:19px;font-weight:300;color:#f1e6d4}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;text-decoration:none;padding:15px 30px;border-radius:999px;font-weight:500;font-size:16px;border:1.5px solid transparent;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--ouro);color:#2a0b16}.btn-main:hover{background:var(--ouro2)}
+.btn-line{border-color:var(--ouro2);color:var(--creme)}.btn-line:hover{background:rgba(220,184,119,.18)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips span{font-size:14px;padding:6px 14px;border-radius:999px;background:rgba(247,240,228,.1);border:1px solid rgba(247,240,228,.28)}
+section{padding:110px 0}
+.titulo{font-size:clamp(38px,5.4vw,64px);color:var(--vinho2);margin-bottom:22px}
+.sobre{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}
+.sobre p{margin-bottom:18px;max-width:52ch}
+.valor{display:inline-block;margin-top:8px;padding:12px 22px;border:1px solid var(--ouro);border-radius:10px;background:var(--papel)}
+.valor b{font-family:'Playfair Display',serif;font-size:26px;color:var(--vinho2);font-weight:600}
+.valor small{display:block;font-size:13.5px;color:#6a5a5c}
+.moldura{aspect-ratio:4/5;border-radius:220px 220px 14px 14px;background:linear-gradient(180deg,var(--vinho2),var(--vinho));display:grid;place-items:center;color:var(--ouro2);position:relative;overflow:hidden;border:6px solid var(--papel);box-shadow:0 0 0 1px var(--ouro)}
+.moldura svg{width:48%}
+.moldura .sel{position:absolute;bottom:26px;font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:var(--creme);text-align:center;padding:0 20px}
+.moldura.tem-foto{background-size:cover;background-position:center}
+.moldura.tem-foto svg,.moldura.tem-foto .sel{display:none}
+.galeria{background:var(--papel);display:none}
+.galeria.ativa{display:block}
+.galeria .intro{max-width:56ch;margin-bottom:40px}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grade a{display:none;aspect-ratio:1;border-radius:10px;background:center/cover no-repeat;border:1px solid rgba(194,153,79,.5);transition:transform .25s}
+.grade a.on{display:block}
+.grade a:hover{transform:scale(1.02)}
+.cardapio{background:var(--vinho);color:var(--creme);text-align:center}
+.cardapio .titulo{color:var(--creme)}
+.cardapio p{max-width:56ch;margin:0 auto 14px;font-weight:300;font-size:18px;color:#e9dccb}
+.orn{color:var(--ouro2);margin-bottom:22px;letter-spacing:.5em}
+.nota{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;max-width:860px;margin:0 auto}
+.nota .num{font-family:'Playfair Display',serif;font-size:clamp(90px,14vw,170px);color:var(--vinho2);line-height:.9}
+.nota .stars{font-size:26px}
+.nota p{color:#4b4144}
+.contato{background:var(--vinho2);color:#fff}
+.contato .titulo{color:#fff;text-align:center;margin-bottom:50px}
+.grid-contato{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:start}
+.mapa{width:100%;height:440px;border:0;border-radius:12px;background:#d8cdb8;display:block}
+.info div{margin-bottom:28px}
+.info h3{font-size:28px;margin-bottom:4px;color:var(--ouro2)}
+.info p,.info a{font-size:18px;font-weight:300;text-decoration:none}
+.info a.tel{border-bottom:1px solid rgba(255,255,255,.5)}
+.horarios{width:100%;border-collapse:collapse;font-size:17px;font-weight:300}
+.horarios td{padding:5px 0}.horarios td:last-child{text-align:right;font-weight:400}
+.info small{display:block;margin-top:8px;font-size:14.5px;opacity:.85}
+.contato .btn-main{background:var(--ouro);color:#2a0b16}
+.contato .btn-line{border-color:#fff;color:#fff}
+footer{background:#1d0810;color:#bfb09b;text-align:center;padding:34px 24px 110px;font-size:14.5px}
+footer b{color:var(--creme);font-family:'Playfair Display',serif;font-size:22px;font-style:italic;font-weight:500}
+.flutuantes{position:fixed;right:0;bottom:90px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.flutuantes a{padding:13px 22px 13px 20px;border-radius:999px 0 0 999px;color:#fff;font-weight:500;font-size:15px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.f-pedir{background:#a93226}.f-reservar{background:#17614f}
+.barra-mobile{display:none}
+@media (prefers-reduced-motion:no-preference){
+ .hero .wrap>*{animation:sobe .9s cubic-bezier(.2,.7,.2,1) both}
+ .hero .wrap>*:nth-child(2){animation-delay:.12s}.hero .wrap>*:nth-child(3){animation-delay:.24s}
+ .hero .wrap>*:nth-child(4){animation-delay:.36s}.hero .wrap>*:nth-child(5){animation-delay:.48s}
+ @keyframes sobe{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}}
+@media (max-width:860px){
+ body{font-size:16.5px}section{padding:76px 0}
+ .menu-btn{display:block}
+ nav ul{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:var(--vinho);padding:8px 24px 18px;border-bottom:1px solid var(--ouro)}
+ nav ul.aberto{display:flex}
+ nav li a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+ .sobre,.grid-contato{grid-template-columns:1fr;gap:40px}
+ .moldura{max-width:380px;margin:0 auto;width:100%}
+ .grade{grid-template-columns:repeat(2,1fr)}
+ .nota{grid-template-columns:1fr;gap:12px;text-align:center}
+ .mapa{height:320px}
+ .flutuantes{display:none}
+ .barra-mobile{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;padding:10px;background:var(--vinho);border-top:1px solid var(--ouro)}
+ .barra-mobile a{flex:1;text-align:center;padding:13px 6px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;color:#fff}
+ .barra-mobile .a1{background:#a93226}.barra-mobile .a2{background:#17614f}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#inicio" aria-label="Paris 6 Bistrô – início"><b>6</b>Paris Bistrô</a>
+  <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav aria-label="Principal"><ul id="menu">
+    <li><a href="#sobre">O bistrô</a></li><li><a href="#galeria" id="lg" style="display:none">Fotos</a></li>
+    <li><a href="#cardapio">Cardápio</a></li><li><a href="#avaliacoes">Avaliações</a></li><li><a href="#contato">Contato</a></li>
+  </ul></nav>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+  <div class="selo"><span class="stars" aria-hidden="true">★★★★★</span><span>4,9 · 3.835 avaliações no Google</span></div>
+  <h1>Paris 6 Bistrô<em>Cozinha francesa moderna em Foz do Iguaçu</em></h1>
+  <p class="lead">Um restaurante francês moderno no Shopping Catuaí Palladium, para almoçar ou jantar com calma e boa companhia.</p>
+  <div class="btns">
+    <a class="btn btn-main" href="https://wa.me/5545998144730?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20uma%20mesa%20no%20Paris%206%20Bistr%C3%B4." target="_blank" rel="noopener">Reservar uma mesa</a>
+    <a class="btn btn-line" href="https://wa.me/5545998144730?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+  </div>
+  <div class="chips"><span>Refeição no local</span><span>Para viagem</span><span>Entrega</span></div>
+</div></section>
+
+<section id="sobre"><div class="wrap sobre">
+  <div>
+    <h2 class="titulo">O bistrô</h2>
+    <p>O Paris 6 Bistrô é um restaurante de cozinha francesa moderna, no Shopping Catuaí Palladium, em Foz do Iguaçu.</p>
+    <p>Venha almoçar ou jantar no local, leve para viagem ou peça com entrega. Para garantir a sua mesa, reserve pelo WhatsApp.</p>
+    <div class="valor"><b>R$ 80–180</b><small>por pessoa, valor informado por clientes no Google</small></div>
+  </div>
+  <div class="moldura" id="moldura" role="img" aria-label="Ilustração de taça e talheres">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M34 14h32c0 20-6 34-16 34S34 34 34 14zM50 48v34M36 84h28M36 28h28"/></svg>
+    <div class="sel">Bon appétit</div>
+  </div>
+</div></section>
+
+<section class="galeria" id="galeria"><div class="wrap">
+  <h2 class="titulo">O ambiente e os pratos</h2>
+  <p class="intro">Um pouco do que você encontra no Paris 6 Bistrô.</p>
+  <div class="grade" id="grade"><a></a><a></a><a></a><a></a><a></a><a></a></div>
+</div></section>
+
+<section class="cardapio" id="cardapio"><div class="wrap">
+  <div class="orn" aria-hidden="true">✦ ✦ ✦</div>
+  <h2 class="titulo">Cardápio</h2>
+  <p>Peça o cardápio completo, com pratos e valores atualizados, direto pelo WhatsApp.</p>
+  <div style="margin-top:34px"><a class="btn btn-main" href="https://wa.me/5545998144730?text=Ol%C3%A1!%20Poderia%20me%20enviar%20o%20card%C3%A1pio%3F" target="_blank" rel="noopener">Pedir o cardápio</a></div>
+</div></section>
+
+<section id="avaliacoes"><div class="wrap nota">
+  <div class="num">4,9</div>
+  <div>
+    <div class="stars" aria-hidden="true">★★★★★</div>
+    <h2 class="titulo" style="font-size:clamp(30px,4vw,46px);margin:8px 0 10px">Nota dos clientes no Google</h2>
+    <p>Mais de 3,8 mil pessoas avaliaram o Paris 6 Bistrô no Google Maps, com nota média de 4,9 em 5.</p>
+    <p style="margin-top:18px"><a class="btn btn-main" style="background:var(--vinho2);color:#fff" href="https://www.google.com/maps/search/?api=1&query=Paris+6+Bistr%C3%B4+Foz+do+Igua%C3%A7u" target="_blank" rel="noopener">Ver avaliações no Google</a></p>
+  </div>
+</div></section>
+
+<section class="contato" id="contato"><div class="wrap">
+  <h2 class="titulo">Contato</h2>
+  <div class="grid-contato">
+    <iframe class="mapa" title="Mapa do Paris 6 Bistrô" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Shopping+Catua%C3%AD+Palladium,+Av.+das+Cataratas,+3570,+Foz+do+Igua%C3%A7u+-+PR&output=embed"></iframe>
+    <div class="info">
+      <div><h3>Endereço</h3>
+        <p>Av. das Cataratas, 3570 – Loja 2025A<br>Bourbon, Foz do Iguaçu – PR, 85853-000<br>Shopping Catuaí Palladium</p>
+        <p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=Shopping+Catua%C3%AD+Palladium+Foz+do+Igua%C3%A7u" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,.5)">Abrir no Google Maps</a></p></div>
+      <div><h3>Telefone e WhatsApp</h3><p><a class="tel" href="tel:+5545998144730">(45) 99814-4730</a></p></div>
+      <div><h3>Horário</h3>
+        <table class="horarios">
+          <tr><td>Segunda e terça</td><td>11h30 às 23h</td></tr>
+          <tr><td>Quarta</td><td>11h30 às 22h</td></tr>
+          <tr><td>Quinta a domingo</td><td>11h30 às 23h</td></tr>
+        </table>
+        <small>Em feriados os horários podem ser diferentes. Confirme pelo WhatsApp.</small></div>
+      <div class="btns">
+        <a class="btn btn-main" href="https://wa.me/5545998144730" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-line" href="tel:+5545998144730">Ligar</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><b>Paris 6 Bistrô</b><br>Restaurante francês moderno · Foz do Iguaçu – PR<br>© <span id="ano"></span> Paris 6 Bistrô</footer>
+
+<div class="flutuantes">
+  <a class="f-pedir" href="https://wa.me/5545998144730?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir</a>
+  <a class="f-reservar" href="https://wa.me/5545998144730?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20uma%20mesa." target="_blank" rel="noopener">Reservas</a>
+</div>
+<div class="barra-mobile">
+  <a class="a1" href="https://wa.me/5545998144730?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir</a>
+  <a class="a2" href="https://wa.me/5545998144730?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20uma%20mesa." target="_blank" rel="noopener">Reservar mesa</a>
+</div>
+
+<script>
+document.getElementById('ano').textContent=new Date().getFullYear();
+var mb=document.getElementById('mb'),mn=document.getElementById('menu');
+mb.addEventListener('click',function(){var o=mn.classList.toggle('aberto');mb.setAttribute('aria-expanded',o)});
+mn.addEventListener('click',function(e){if(e.target.tagName==='A'){mn.classList.remove('aberto');mb.setAttribute('aria-expanded',false)}});
+var EXT=['.jpg','.jpeg','.png','.webp','.jpg.jpeg','.png.png',''];
+function achar(bases,ok){var l=[];bases.forEach(function(b){EXT.forEach(function(e){l.push(b+e)})});var i=0;(function t(){if(i>=l.length)return;var im=new Image(),u=l[i++];im.onload=function(){ok(u)};im.onerror=t;im.src=u})()}
+achar(['foto-topo','fototopo'],function(u){document.getElementById('inicio').style.setProperty('--hero-img','url("'+u+'")')});
+achar(['foto-casa','fotocasa'],function(u){var m=document.getElementById('moldura');m.style.backgroundImage='url("'+u+'")';m.classList.add('tem-foto')});
+var tiles=document.querySelectorAll('#grade a');
+tiles.forEach(function(a,k){var n=k+1;achar(['foto-'+n,'foto'+n],function(u){a.style.backgroundImage='url("'+u+'")';a.href=u;a.target='_blank';a.classList.add('on');document.getElementById('galeria').classList.add('ativa');document.getElementById('lg').style.display=''})});
+</script>
+</body>
+</html>
